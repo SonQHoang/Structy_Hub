@@ -1,5 +1,5 @@
 const greet = (s) => {
-  return "hey " + s
+  return "hey " + s;
 };
 ​
 module.exports = {
