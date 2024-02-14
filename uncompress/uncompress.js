@@ -1,29 +1,34 @@
 const uncompress = (s) => {
+  // todo
   let result = [];
-  let numbers = '0123456789' // the #'s that we're checking against
+  let i = 0;
+  let j = 0;
+  let numbers = "0123456789"
   
-  let i = 0; // first pointer to track the numeric component
-  let j = 0; // second pointer to track the alpha component
-  
-  while (j < s.length) { // Keep running this loop until we reach the end of the string
-    if(numbers.includes(s[j])) { // as we're running the loop, if the value of s[j] IS a NUMBER
-                                // we want to increment j b/c we want j to stop on a LETTER
-      j++
-    } else { // J has HIT a LETTER
-      const num = Number(s.slice(i,j)) // this gives me everything between i and j, not including j
-                                      // Using Number() we turn the string into a # that we can use e.g.: 3
-      for(let count = 0; count < num; count += 1) { // creating a loop to decide how many times we need to print the next character
+  while(j < s.length) {
+    if(numbers.includes(s[j])) {
+      j++;
+    } else {
+      const num = Number(s.slice(i, j)); // Gives me my number and casts it as a number;
+      for(let count = 0; count < num; count++) {
         result.push(s[j])
       }
-      j += 1;
+      j++;
       i = j;
     }
-  }
-  return result.join('')
+  } 
+  return result.join("");
 };
 ​
 module.exports = {
   uncompress,
 };
 ​
-  return result;
+//  So we need to run through the entire string and uncompress it
+// Define 2 pointers (I & J) to track position
+// define result array
+// Define numbers to check against=
+// We'll use J to run through the string til we reach the end
+// As we increment J
+  // If we hit a number we'll increment til we hit a letter
+  
