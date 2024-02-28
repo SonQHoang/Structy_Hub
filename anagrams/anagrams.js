@@ -20,8 +20,9 @@ const anagrams = (s1, s2) => {
       return false;
     }
   }
-  for(let char in charMap) {
-    console.log('char', char)
+  for(let char in charMap) { // This is checking the keys
+          console.log('charMap', charMap, charMap[char])
+​
     if(charMap[char] !== 0) {
       return false;
     }
@@ -29,7 +30,10 @@ const anagrams = (s1, s2) => {
   return true;
 };
 ​
+console.log(anagrams('restfully', 'fluster'))
+​
 module.exports = {
   anagrams,
 };
 ​
+  return true;
